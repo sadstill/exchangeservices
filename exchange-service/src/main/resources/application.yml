@@ -1,11 +1,10 @@
-server:
-  port: 8080
-
 currencylayer:
   accessKey: bb3d1cce303912a0260abfed09b3538a
   baseUrl: http://api.currencylayer.com/
 
 spring:
+  config:
+    import: configserver:http://localhost:8888
 
   application:
     name: exchange-service
@@ -19,7 +18,6 @@ spring:
     password: 2304
     driver-class-name: org.postgresql.Driver
 
-
   jpa:
     properties:
       hibernate:
@@ -32,4 +30,6 @@ spring:
   liquibase:
     enabled: true
     change-log: /db/changelog/db.changelog-master.yaml
+
+
 

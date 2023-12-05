@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: github-config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sadstill/prop-test
+          clone-on-start: true
+          basedir: file://Users/sadstill/git-repo
+          username: sadstill
+          password: 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
+          default-label: main
+
+logging:
+  pattern:
+    console: "%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n"

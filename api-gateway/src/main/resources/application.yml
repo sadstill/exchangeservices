@@ -1,10 +1,9 @@
 server:
-  port: 8761
+  port: 8765
 
 spring:
   application:
-    name: eureka-server
+    name: api-gateway
 
   config:
     import: configserver:http://localhost:8888
-
