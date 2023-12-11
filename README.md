@@ -12,11 +12,13 @@ Send a GET request to localhost:8080/currency-converter with json in body of req
 If u want to check the course (CNY, USD, EUR) to rub, u should send a GET request to http://localhost:8080/currency-rates. U can do this at browser.
 
 How json looks like?
+```
 {
   "sourceCurrency": "USD", // валюта, которую хотим поменять
   "amount": 1, // количество валюты, которую хотим поменять
   "targetCurrency": "EUR" // результирующая валюта
 }
+```
 Реализован реактивный подход для выполнения запросов к стороннему API. + накаченый миграции liquibase и запуск скрипта на создание таблицы при первом запуске приложения. Приложение готово к запуску в контейнерах.
 
 
