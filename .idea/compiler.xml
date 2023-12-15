@@ -7,10 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway" />
         <module name="cloud-config" />
+        <module name="exchange_rate_storage" />
         <module name="exchange-service" />
+        <module name="exchange_rate_supplier" />
+        <module name="api-gateway" />
         <module name="eureka-server" />
+        <module name="dto" />
       </profile>
     </annotationProcessing>
   </component>
