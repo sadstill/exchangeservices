@@ -1,5 +1,6 @@
-package com.sadstill.app.service;
+package com.sadstill.app.service.kafka_producer;
 
+import com.sadstill.app.service.CurrencyConverterService;
 import com.sadstill.dto.CurrencyRateDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

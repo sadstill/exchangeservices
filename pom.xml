@@ -15,8 +15,8 @@
         <module>eureka-server</module>
         <module>api-gateway</module>
         <module>cloud-config</module>
-        <module>exchange_rate_supplier</module>
-        <module>exchange_rate_storage</module>
+        <module>exchange-rate-supplier</module>
+        <module>exchange-rate-storage</module>
         <module>dto</module>
     </modules>
 

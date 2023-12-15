@@ -22,4 +22,5 @@ public class CurrencyConverterController {
                 currencyRateDto.getRate()
         ).block();
     }
+
 }

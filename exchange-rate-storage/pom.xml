@@ -9,7 +9,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>exchange_rate_supplier</artifactId>
+    <groupId>com.sadstill.consumer</groupId>
+    <artifactId>exchange-rate-storage</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -19,14 +20,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webflux</artifactId>
-            <version>6.0.13</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka -->
@@ -35,12 +30,7 @@
             <artifactId>spring-kafka</artifactId>
             <version>3.1.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.sadstill.dto</groupId>
-            <artifactId>dto</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
+
     </dependencies>
 
 </project>
