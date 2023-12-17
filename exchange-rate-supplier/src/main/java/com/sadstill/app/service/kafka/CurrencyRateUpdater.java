@@ -1,4 +1,4 @@
-package com.sadstill.app.service.kafka_producer;
+package com.sadstill.app.service.kafka;
 
 import com.sadstill.app.service.CurrencyConverterService;
 import com.sadstill.dto.CurrencyRateDto;
@@ -34,14 +34,18 @@ public class CurrencyRateUpdater {
                 .flatMap(currency -> {
                     final String currencyFinal = currency;
 
-                    return currencyConverterService.getConvertedCurrency(currencyFinal, "RUB", BigDecimal.valueOf(1))
+                    return currencyConverterService.getConvertedCurrency(currencyFinal, "RUB", "1")
                             .doOnError(throwable -> log.error("Произошла ошибка конвертации валют."))
                             .map(rate -> new CurrencyRateDto(currencyFinal, "RUB", rate))
-                            .onErrorResume(ex -> Mono.empty()); // Пропускаем ошибки, чтобы не прерывать поток
+                            .onErrorResume(ex -> {
+                                log.error("Ошибка создания списка курсов валют.");
+                                return Mono.empty();
+                            });
                 })
                 .collectList()
                 .doOnNext(currencyRates -> {
                     kafkaTemplate.send("CurrencyRates", currencyRates);
+                    log.info("Список курсов валют был отправлен в kafka topic, " + currencyRates);
                 })
                 .subscribe();
     }

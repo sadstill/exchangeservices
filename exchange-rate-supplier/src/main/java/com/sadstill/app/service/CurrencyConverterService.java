@@ -20,7 +20,7 @@ public class CurrencyConverterService {
     @Value("${currencylayer.baseUrl}")
     private String baseUrl;
 
-    public Mono<BigDecimal> getConvertedCurrency(String from, String to, BigDecimal rate) {
+    public Mono<BigDecimal> getConvertedCurrency(String from, String to, String rate) {
         String apiUrl = String.format("%sconvert?access_key=%s&from=%s&to=%s&amount=%s", baseUrl, accessKey,
                 from, to, rate);
 

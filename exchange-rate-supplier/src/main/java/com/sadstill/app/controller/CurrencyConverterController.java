@@ -1,6 +1,7 @@
 package com.sadstill.app.controller;
 
 import com.sadstill.app.service.CurrencyConverterService;
+import com.sadstill.dto.ConversionDto;
 import com.sadstill.dto.CurrencyRateDto;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +16,11 @@ public class CurrencyConverterController {
     private final CurrencyConverterService currencyConverterService;
 
     @GetMapping("/currency-converter")
-    public BigDecimal convert(@RequestBody CurrencyRateDto currencyRateDto) {
+    public BigDecimal convert(@RequestBody ConversionDto conversionDto) {
         return currencyConverterService.getConvertedCurrency(
-                currencyRateDto.getSourceCurrency(),
-                currencyRateDto.getTargetCurrency(),
-                currencyRateDto.getRate()
+                conversionDto.getSourceCurrency(),
+                conversionDto.getTargetCurrency(),
+                conversionDto.getSourceValue()
         ).block();
     }
 

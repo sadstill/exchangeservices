@@ -2,6 +2,9 @@ server:
   port: 8989
 
 spring:
+  application:
+    name: exchange-rate-supplier
+
   kafka:
     producer:
       bootstrap-servers: localhost:9092
@@ -11,8 +14,10 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
 
 currencylayer:
-  accessKey: bb3d1cce303912a0260abfed09b3538a
+  accessKey: 7dd065860735513fef96ecd9eb2681a2
   baseUrl: http://api.currencylayer.com/

@@ -13,7 +13,7 @@ spring:
           clone-on-start: true
           basedir: file://Users/sadstill/git-repo
           username: sadstill
-          password: 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
+          password: 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
           default-label: main
 
 logging:
