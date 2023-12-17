@@ -11,12 +11,11 @@
     <name>exchangeservices</name>
 
     <modules>
-        <module>exchange-service</module>
         <module>eureka-server</module>
         <module>api-gateway</module>
         <module>cloud-config</module>
-        <module>exchange-rate-supplier</module>
-        <module>exchange-rate-storage</module>
+        <module>exchange-rate-converter</module>
+        <module>exchange-rate-management</module>
         <module>dto</module>
     </modules>
 
@@ -55,6 +54,7 @@
             <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

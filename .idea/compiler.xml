@@ -8,13 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-config" />
-        <module name="exchange-service" />
-        <module name="exchange-rate-supplier" />
+        <module name="exchange-rate-converter" />
         <module name="api-gateway" />
         <module name="eureka-server" />
         <module name="dto" />
-        <module name="exchange-rate-storage" />
+        <module name="exchange-rate-management" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="exchange-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

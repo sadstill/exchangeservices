@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: exchange-rate-converter
+
+  profiles:
+    active: micro
+
+  config:
+    import: configserver:http://localhost:8888
+
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+currencylayer:
+  accessKey: 7dd065860735513fef96ecd9eb2681a2
+  baseUrl: http://api.currencylayer.com/

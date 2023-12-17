@@ -23,4 +23,4 @@ How json looks like?
 
 
 
-// TODO добавить kafka producer + consumer
+https://localhost:???/currencies/rates
